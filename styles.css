@@ -258,18 +258,23 @@ a.logo{
 h1 {
     font-size: 3.4rem;
 }
+.projects{
+    grid-template-columns: 1fr;
+}
 
 }
 
-@media (max-width: 588px)  {
-
-    .projects{
-        grid-template-columns: 1fr;
-    }
-}
 
 
 @media (max-width: 464px) {
+    .my-photo{
+        display: none;
+    }
+
+    h1{
+        text-align: center;
+    }
+    
     .checkbtn{
         display: block;
     }
@@ -307,5 +312,17 @@ h1 {
 
     #check:checked ~ ul {
         left: 0;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .projects{
+        padding: 0;
+    }
+
+    #projects{
+        padding: 30px;
     }
 }
