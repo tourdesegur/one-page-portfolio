@@ -273,6 +273,7 @@ h1 {
 
     h1{
         text-align: center;
+        margin: 0 auto;
     }
     
     .checkbtn{
@@ -323,6 +324,6 @@ h1 {
     }
 
     #projects{
-        padding: 30px;
+        padding: 5%;
     }
 }
