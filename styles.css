@@ -224,6 +224,47 @@ a.btn:hover{
 }
 }
 
+/*Contacts section styling */
+
+#contacts{
+    width: 100%;
+    margin: 60px auto;
+    text-align: center;  
+}
+
+#contacts h2 {
+    color: var(--primary-color);
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+a.email, .social-icons a{
+    font-size: 1.6rem;
+    color: var(--primary-color);
+}
+
+a.email:hover{
+    color: var(--accent-color);
+}
+
+.social-icons{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    gap:20px;
+}
+
+.social-icons i {
+    color: var(--accent-color);
+    font-size: 2rem;
+}
+
+.social-icons i:hover{
+    color: var(--primary-color);
+}
+/*Responsiveness */
+
 @media (max-width: 766px) {
     .project-description,
     .project-tech, a.btn{
