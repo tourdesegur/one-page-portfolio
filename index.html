@@ -9,7 +9,7 @@
     <title>Web Developer Portfolio Viktoriia Perehuda</title>
 </head>
 <body>
-    <nav id="navbar">
+ <!--<nav id="navbar">
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
             <i class="fa-solid fa-bars"></i>
@@ -20,7 +20,24 @@
             <li><a class="nav-link" href="#projects">Projects</a></li>
             <li><a class="nav-link" href="#contacts">Contacts</a></li>
         </ul>
+    </nav>-->   
+    <nav id="navbar">
+        <label for="check" id="hamburger-btn" class="checkbtn">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+        <a href="index.html" class="logo" title="Back to top">Portfolio.</a>  
+        <ul id="main-menu">
+            <li><a class="nav-link" href="#welcome-section">Home</a></li>
+            <li><a class="nav-link" href="#projects">Projects</a></li>
+            <li><a class="nav-link" href="#contacts">Contacts</a></li>
+        </ul>
+        <ul id="hamburger-menu" style="display:none">
+            <li ><a class="nav-link hamburger-link" href="#welcome-section">Home</a></li>
+            <li ><a class="nav-link hamburger-link" href="#projects">Projects</a></li>
+            <li ><a class="nav-link hamburger-link" href="#contacts">Contacts</a></li>
+        </ul>
     </nav>
+
 
     <main>
     <section id="welcome-section">
@@ -89,7 +106,7 @@
     </section>
     <section id="contacts">
         <div>
-            <h2>Let's get in touch</h2>
+            <h2>Let's get in touch!</h2>
             <a href="mailto:viktoria.perehuda@gmail.com" class="email" title="email">viktoria.perehuda@gmail.com</a>
             <br/>
             <div class="social-icons">
@@ -100,5 +117,24 @@
         </div>
     </section>
 </main>
+<script type="text/javascript">
+    const hamburgerBtn = document.getElementById("hamburger-btn");
+    const hamburgerMenu = document.getElementById("hamburger-menu");
+    const hamburgerLinks = document.querySelectorAll(".hamburger-link")
+
+    hamburgerBtn.addEventListener("click", () => {
+        if(hamburgerMenu.style.display === "none") {
+            hamburgerMenu.style.display = "block";
+        } else {
+            hamburgerMenu.style.display = "none";
+        }
+    });
+
+    hamburgerLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            hamburgerMenu.style.display = "none";
+        }) 
+    })
+</script>
 </body>
 </html>

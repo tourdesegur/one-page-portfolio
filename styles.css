@@ -6,7 +6,13 @@
     --primary-color:black;
     --compementary-color:white;
 }
-
+/* added */
+:target::before {
+    content: "";
+    display: block;
+    height: 100px; /* fixed header height*/
+  }
+/* added */
 *{
     box-sizing: border-box;
     margin: 0;
@@ -32,7 +38,16 @@ html {
     color: var(--primary-color);
     z-index: 5;
   }
-
+/* added */
+  #navbar #hamburger-menu {
+    position: fixed;
+    top: 100px;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--compementary-color);
+    transition: all .5s;
+}
+/* added */
  a.logo {
     font-size: 4rem;
     line-height: 100px;
@@ -115,7 +130,7 @@ object-fit: cover;
     display: block;
     width: 100vw;
     margin: 0 auto;
-    padding: 60px;
+    padding: 0 60px 60px 60px;
     background-color: var(--primary-color);
 }
 
@@ -217,29 +232,28 @@ a.btn:hover{
     background-color: var(--accent-color);
 }
 
-@media (max-width: 942px) {
-    .project-description,
-    .project-tech{
-    width: 100%;
-}
-}
 
 /*Contacts section styling */
 
 #contacts{
-    width: 100%;
+    width: 100vw;
+    height: 50vh;
     margin: 60px auto;
     text-align: center;  
+    display: flex;
+    align-items: center;
+    justify-content:center;
 }
 
 #contacts h2 {
     color: var(--primary-color);
-    font-size: 3rem;
+    font-size: 3.6rem;
+    font-weight: 400;
     margin-bottom: 20px;
 }
 
 a.email, .social-icons a{
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     color: var(--primary-color);
 }
 
@@ -248,7 +262,7 @@ a.email:hover{
 }
 
 .social-icons{
-    margin-top: 10px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content:center;
@@ -257,13 +271,22 @@ a.email:hover{
 
 .social-icons i {
     color: var(--accent-color);
-    font-size: 2rem;
+    font-size: 2.4rem;
 }
 
 .social-icons i:hover{
     color: var(--primary-color);
 }
+
+
 /*Responsiveness */
+
+@media (max-width: 942px) {
+    .project-description,
+    .project-tech{
+    width: 100%;
+}
+}
 
 @media (max-width: 766px) {
     .project-description,
@@ -315,20 +338,16 @@ h1 {
     h1{
         text-align: center;
         margin: 0 auto;
+        padding: 0 20px;
+        font-size: 2.6rem;
     }
     
     .checkbtn{
         display: block;
     }
 
-    #navbar ul{
-        position: fixed;
-        top: 100px;
-        width: 100%;
-        height: 100vh;
-        left: -100%;
-        background-color: var(--compementary-color);
-        transition: all .5s;
+    #navbar #main-menu {
+        display:none;
     }
 
     #navbar ul li a{
@@ -352,10 +371,6 @@ h1 {
         color: var(--accent-color);
     }
 
-    #check:checked ~ ul {
-        left: 0;
-    }
-
     h2 {
         font-size: 2rem;
     }
@@ -366,5 +381,12 @@ h1 {
 
     #projects{
         padding: 5%;
+    }
+
+    #contacts{
+        width:80%;
+    }
+    #contacts a.email{
+        font-size: 1.6rem;
     }
 }
